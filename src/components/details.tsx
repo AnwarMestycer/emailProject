@@ -3,13 +3,21 @@ import close from '../logos/close.svg'
 import { useEmailContext } from "./context";
 import unread from '../logos/unread.svg'
 import archived from '../logos/archived.svg'
+import { useEffect } from "react";
 const Details = ({ email, onClose }: { email: Email, onClose: () => void }) => {
     const {markAsReadUnread, makeArchiveUnarchive} = useEmailContext();
 
     const read = !email.read;
     const archive = email.isArchived;
-
-
+    useEffect(() => {
+      const handleEscape = (event: KeyboardEvent) => {
+        if (event.key === "Escape") {
+          onClose();
+        }
+      };
+      window.addEventListener("keydown", handleEscape);
+    }, [onClose]);
+  
   return (
     <div>
         <div className="w-full h-[40px] mt-4 ml-6 flex justify-between items-center">
@@ -34,7 +42,7 @@ const Details = ({ email, onClose }: { email: Email, onClose: () => void }) => {
         </div>
         <div className="flex flex-col gap-1 m-6">
       <h1 className="font-semibold text-lg">{email.subject} </h1>
-      <p className="text-sm font-sm">{email.content}</p>
+      <p className="text-sm font-sm ">{email.content}</p>
         </div>
     </div>
   );

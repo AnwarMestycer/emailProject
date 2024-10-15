@@ -1,0 +1,27 @@
+import { Outlet } from "react-router-dom";
+import { SideBar } from "./components/sidebar";
+import { EmailProvider } from "./components/context";
+
+export interface Email {
+  id: number;
+  subject: string;
+  content: string;
+  read: boolean;
+  isArchived: boolean;
+  isSelected: boolean;
+}
+
+function App() {
+  return (
+    <EmailProvider>
+      <div className="flex">
+        <SideBar />
+        <div className="flex-1 ml-[20px]">
+          <Outlet />
+        </div>
+      </div>
+    </EmailProvider>
+  );
+}
+
+export default App;

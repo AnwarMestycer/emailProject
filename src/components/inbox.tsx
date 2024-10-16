@@ -16,17 +16,16 @@ export const Inbox = () => {
     setSelectedEmail(null); 
   };
   return (
-    <div>
-
+    <div className="w-full">
     <div className="shadow-sm">
-      <h1 className="text-3xl font-sm mt-4">Inbox</h1>
-      <Header emails={inboxEmails} />
-      <div className="mt-3">
+      <h1 className="text-3xl font-semibold m-4">Inbox</h1>
+      <Header emails={inboxEmails}/>
+      <div className="">
         <ul>
           {inboxEmails.map((email: Email) => {
             return (
               <li
-                className="flex gap-3 p-2 border hover:bg-[#D1E2FF]"
+                className={`flex items-center gap-3 pl-4 h-[45px] border hover:bg-hover ${email.isSelected ? "bg-[#F3F6FB]": "" }`}
                 key={email.id}
                 
               >

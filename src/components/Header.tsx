@@ -21,7 +21,7 @@ const Header = ({ emails }: HeaderProps) => {
   );
   let countSelected = emails.filter((email: Email) => email.isSelected).length;
   return (
-    <div className="flex justify-between mt-3 text-sm  ml-[10px] ">
+    <div className="flex justify-between mt-3 text-sm  m-4 ">
       <div className="flex justify-between gap-2">
         <input
           type="checkbox"

@@ -12,7 +12,7 @@ export const SideBar = () => {
   const location = useLocation().pathname;
 
   return (
-    <div className="w-[206px] h-screen bg-[#F8FAFC]">
+    <div className="w-[206px] h-screen bg-background">
       <div className="flex flex-col justify-between h-screen">
         <div className="flex flex-col">
          

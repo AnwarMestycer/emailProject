@@ -19,14 +19,14 @@ export const Archive = () => {
     <div>
 
     <div className="shadow-sm">
-      <h1 className="text-3xl font-sm mt-4">Archive</h1>
+      <h1 className="text-3xl font-semibold mt-8 mb-4">Archive</h1>
       <Header emails={archivedEmails} />
-      <div className="mt-3">
+      <div className="mt-4">
         <ul>
           {archivedEmails.map((email: Email) => {
             return (
               <li
-                className="flex gap-3 p-2 border hover:bg-[#D1E2FF]"
+                className={`flex items-center gap-3 p-2 h-[45px] border hover:bg-hover ${email.isSelected ? "bg-[#F3F6FB]": "" }`}
                 key={email.id}
                 
               >

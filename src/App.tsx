@@ -16,7 +16,7 @@ function App() {
     <EmailProvider>
       <div className="flex">
         <SideBar />
-        <div className="flex-1 ml-[20px]">
+        <div className="w-full">
           <Outlet />
         </div>
       </div>

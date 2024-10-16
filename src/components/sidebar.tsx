@@ -16,11 +16,11 @@ export const SideBar = () => {
       <div className="flex flex-col justify-between h-screen">
         <div className="flex flex-col">
          
-          <Link to="/"> <img src={logo} className="w-12 h-12 ml-2" alt=""/></Link>
+          <Link to="/"> <img src={logo} className="w-10 h-10 ml-2" alt=""/></Link>
 
           <ul className="ml-2 flex flex-col gap-1 p-1 ">
-           <Link to="/inbox">
-            <li className={`flex justify-between rounded-3xl p-2 font-medium ${location === "/inbox" ? "bg-[#D6E2FB]" : " "}`}>
+           <Link to="/">
+            <li className={`flex justify-between rounded-3xl p-2 font-medium ${location === "/" ? "bg-[#D6E2FB]" : " "} hover:bg-hover`}>
               <div className="flex gap-2">
                 <img src={inbox} alt=""/>
                 <p>Inbox</p>
@@ -29,7 +29,7 @@ export const SideBar = () => {
             </li>
            </Link>
              <Link to="/archive">
-            <li className={`flex justify-between rounded-3xl p-2 font-medium ${location === "/archive" ? "bg-[#D6E2FB]" : " "}`}>
+            <li className={`flex justify-between rounded-3xl p-2 font-medium ${location === "/archive" ? "bg-[#D6E2FB]" : " "} hover:bg-hover`}>
              <div className="flex gap-2">
                 <img src={archive} alt=""/>
                 <p>Archive</p>
@@ -39,11 +39,12 @@ export const SideBar = () => {
              </Link>
           </ul>
         </div>
-          
+          <Link to="/login">
             <div className="flex justify-start items-center gap-2 rounded-3xl font-medium hover:bg-[#D6E2FB] m-3 p-1">
               <img src={logout} alt="" />
               <p>logout</p>
             </div>
+            </Link>
       </div>
     </div>
   );

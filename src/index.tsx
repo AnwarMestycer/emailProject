@@ -6,15 +6,18 @@ import reportWebVitals from './reportWebVitals';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { Inbox } from './components/inbox';
 import { Archive } from './components/archive';
+import Login from './components/login';
+import NotFoundPage from './components/notFound';
 
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <App />,
+    errorElement: <NotFoundPage />,
     children: [
       {
-        path: 'inbox',
+        path: '',
         element: <Inbox />,
       },
       {
@@ -22,7 +25,12 @@ const router = createBrowserRouter([
         element: <Archive />,
       }
     ],
+    
   },
+  {
+    path:'login',
+    element:<Login />
+  }
 ]);
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement

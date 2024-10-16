@@ -46,9 +46,14 @@ export const Inbox = () => {
         </ul>
       </div>
     </div>
+
       {selectedEmail && (
+        <div>
+
+         <div className="fixed inset-0 bg-gray-700 bg-opacity-50 z-40"></div>
         <div className="fixed inset-0 bg-white bg-opacity-100 z-50 ml-[400px]">
           <Details email={selectedEmail} onClose={closePopup}/>
+        </div>
         </div>
       )}
       </div>

@@ -39,7 +39,7 @@ export const SideBar = () => {
              </Link>
           </ul>
         </div>
-       
+          
             <div className="flex justify-start items-center gap-2 rounded-3xl font-medium hover:bg-[#D6E2FB] m-3 p-1">
               <img src={logout} alt="" />
               <p>logout</p>
